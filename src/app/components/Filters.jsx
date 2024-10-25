@@ -9,7 +9,7 @@ export default function Filters({ sortBy,setSortBy }) {
   const handleChange = (event) => {
     setSortBy(event.target.value);
   };
-
+//filters
   return (
     <div className="flex justify-end px-5 py-2">
       <FormControl className="w-1/6">
