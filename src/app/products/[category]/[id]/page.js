@@ -1,10 +1,12 @@
 "use client";
 
 import { Card, CardContent, Modal, Typography } from "@mui/material";
+import { Router, useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const modal = ({ params }) => {
-  const { category, id } = params;
+  const { category, id } = React.use(params);
+  const router = useRouter()
 
   const correctedCategory = (str) => {
     return str.split("%20").join(" ");
@@ -13,7 +15,7 @@ const modal = ({ params }) => {
   const [open, setOpen] = useState(true);
   const handleClose = () => {
     setOpen(false);
-    router.back(); // Close modal and navigate back
+    router.back()
   };
   return (
     <Modal open={open} onClose={handleClose}>
@@ -25,7 +27,9 @@ const modal = ({ params }) => {
           </Typography>
 
           <Typography variant="body1">ID: {id}</Typography>
-          <button className='font-bold mt-10' onClick={handleClose}>Close</button>
+          <button className="font-bold mt-10" onClick={handleClose}>
+            Close
+          </button>
         </CardContent>
       </Card>
     </Modal>
