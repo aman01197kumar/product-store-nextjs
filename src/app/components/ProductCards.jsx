@@ -17,7 +17,7 @@ export default function ProductCards({
 }) {
   return (
     <>
-      <Card sx={{ width: 345, height: 580 }} onClick={() => setShowModal(true)}>
+      <Card sx={{ width: 345, height: 580 }}>
         <CardMedia sx={{ height: 300 }} image={image} title="green iguana" />
         <CardContent>
           <Typography gutterBottom variant="h6" component="div">
